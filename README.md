@@ -18,17 +18,18 @@ Minimum SDK Requirement: IOS 13
 
 #### Initializing SDK
 
-1. Import SwiftUi in the controller file from where we are going to initilize sastotickets sdk :
+1. Import SwiftUi & Sastotickets in the controller file from where we are going to initilize sastotickets sdk :
 
 ```
 import SwiftUI
+import SastoTickets
         
 ```
 
 2. Run the following code preferably on button click which will display sastotickets user interface
 
 ```
-let vc = UIHostingController(rootView:SastoTicketsInitilizerView(clientId: "", clientSecret: "", walletBalance: 0, phone: ""){response, error in
+let vc = UIHostingController(rootView:SastoticketsView(clientId: "", clientSecret: "", walletBalance: 0, phone: ""){response, error in
     if error != nil {
         //Handle error
     }
@@ -48,7 +49,7 @@ ViewController.swift
 ```
 import UIKit
 import SwiftUI
-
+import SastoTickets
 
 
 class ViewController: UIViewController {
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapButton(){
-        let vc = UIHostingController(rootView:SastoTicketsInitilizerView(clientId: "", clientSecret: "", walletBalance: 0, phone: ""){response, error in
+        let vc = UIHostingController(rootView:SastoticketsView(clientId: "", clientSecret: "", walletBalance: 0, phone: ""){response, error in
             if error != nil {
                 //Handle error
             }
